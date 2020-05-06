@@ -19,9 +19,6 @@
         },
         "registries_contosodigitalgood_name": {
             "value": null
-        },
-        "managedClusters_kubeContosoGoods_name": {
-            "value": null
         }
     }
 }
