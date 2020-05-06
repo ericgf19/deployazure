@@ -22,12 +22,6 @@
         },
         "managedClusters_kubeContosoGoods_name": {
             "value": null
-        },
-        "workspaces_defaultworkspace_dbd9230d_b929_45a9_99c3_f2c003d9c1b8_wus2_externalid": {
-            "value": null
-        },
-        "publicIPAddresses_9445cc8d_51fe_40bb_93d8_2b71f6538bf7_externalid": {
-            "value": null
         }
     }
 }
