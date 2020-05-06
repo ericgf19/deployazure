@@ -29,14 +29,6 @@
         "managedClusters_kubeContosoGoods_name": {
             "defaultValue": "kubeContosoGoods",
             "type": "String"
-        },
-        "workspaces_defaultworkspace_dbd9230d_b929_45a9_99c3_f2c003d9c1b8_wus2_externalid": {
-            "defaultValue": "/subscriptions/dbd9230d-b929-45a9-99c3-f2c003d9c1b8/resourceGroups/defaultresourcegroup-wus2/providers/microsoft.operationalinsights/workspaces/defaultworkspace-dbd9230d-b929-45a9-99c3-f2c003d9c1b8-wus2",
-            "type": "String"
-        },
-        "publicIPAddresses_9445cc8d_51fe_40bb_93d8_2b71f6538bf7_externalid": {
-            "defaultValue": "/subscriptions/dbd9230d-b929-45a9-99c3-f2c003d9c1b8/resourceGroups/MC_Blockchain_TradableAsset_Accelerator_Contoso_kubeContosoGoods_westus2/providers/Microsoft.Network/publicIPAddresses/9445cc8d-51fe-40bb-93d8-2b71f6538bf7",
-            "type": "String"
         }
     },
     "variables": {},
@@ -145,11 +137,11 @@
                     "loadBalancerSku": "Standard",
                     "loadBalancerProfile": {
                         "managedOutboundIPs": {
-                            "count": 1
+                            "count": 0
                         },
                         "effectiveOutboundIPs": [
                             {
-                                "id": "[parameters('publicIPAddresses_9445cc8d_51fe_40bb_93d8_2b71f6538bf7_externalid')]"
+                               
                             }
                         ]
                     },
