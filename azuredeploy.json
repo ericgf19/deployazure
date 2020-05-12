@@ -2,10 +2,6 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "vaults_ContosoGoodsVault_name": {
-      "defaultValue": "ContosoGoodsVault",
-      "type": "String"
-    },
     "databaseAccounts_contosogood_name": {
       "defaultValue": "contosogood",
       "type": "String"
@@ -167,23 +163,7 @@
           }
         ]
       }
-    },
-    {
-      "type": "Microsoft.KeyVault/vaults",
-      "apiVersion": "2016-10-01",
-      "name": "[parameters('vaults_ContosoGoodsVault_name')]",
-      "location": "westus2",
-      "properties": {
-        "sku": {
-          "family": "A",
-          "name": "Standard"
-        },
-        "enabledForDeployment": true,
-        "enabledForDiskEncryption": true,
-        "enabledForTemplateDeployment": true,
-        "enableSoftDelete": true
-      }
-    },
+    }
     {
       "type": "Microsoft.Storage/storageAccounts",
       "apiVersion": "2019-06-01",
@@ -217,23 +197,7 @@
         },
         "accessTier": "Hot"
       }
-    },
-    {
-      "type": "Microsoft.KeyVault/vaults/secrets",
-      "apiVersion": "2016-10-01",
-      "name": "[concat(parameters('vaults_ContosoGoodsVault_name'), '/GiftEncKey')]",
-      "location": "westus2",
-      "dependsOn": [
-        "[resourceId('Microsoft.KeyVault/vaults', parameters('vaults_ContosoGoodsVault_name'))]"
-      ],
-      "properties": {
-        "value": "cde505e7b63948758833009d3764e416",
-
-        "attributes": {
-          "enabled": true
-        }
-      }
-    },
+    },    
     {
       "type": "Microsoft.Storage/storageAccounts/blobServices",
       "apiVersion": "2019-06-01",
