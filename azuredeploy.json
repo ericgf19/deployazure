@@ -25,10 +25,6 @@
     "registries_contosodigitalgood_name": {
       "defaultValue": "contosodigitalgood",
       "type": "String"
-    },
-    "managedClusters_kubeContosoGoods_name": {
-      "defaultValue": "kubeContosoGoods",
-      "type": "String"
     }
   },
   "variables": {},
@@ -298,62 +294,7 @@
       "properties": {
         "publicAccess": "Container"
       }
-    },
-    {
-      "type": "Microsoft.ContainerService/managedClusters",
-      "apiVersion": "2020-03-01",
-      "name": "[parameters('managedClusters_kubeContosoGoods_name')]",
-      "location": "westus2",
-      "sku": {
-        "name": "Basic",
-        "tier": "Free"
-      },
-      "properties": {
-        "kubernetesVersion": "1.15.10",
-        "dnsPrefix": "[concat(parameters('managedClusters_kubeContosoGoods_name'), '-dns')]",
-        "agentPoolProfiles": [
-          {
-            "name": "agentpool",
-            "count": 3,
-            "vmSize": "Standard_DS2_v2",
-            "osDiskSizeGB": 100,
-            "maxPods": 110,
-            "type": "VirtualMachineScaleSets",
-            "orchestratorVersion": "1.15.10",
-            "nodeLabels": {},
-            "mode": "System",
-            "osType": "Linux"
-          }
-        ],
-        "servicePrincipalProfile": {
-          "clientId": "64e9161c-8a50-433c-8796-c14f58cb1726",
-          "Secret": "Tm190986@Gow12345"
-        },
-        "nodeResourceGroup": "[concat('MC_Blockchain_TradableAsset_Accelerator_Contoso_', parameters('managedClusters_kubeContosoGoods_name'), '_westus2')]",
-        "enableRBAC": true,
-        "apiServerAccessProfile": {
-          "enablePrivateCluster": false
-        }
-      }
-    },
-    {
-      "type": "Microsoft.ContainerService/managedClusters/agentPools",
-      "apiVersion": "2020-03-01",
-      "name": "[concat(parameters('managedClusters_kubeContosoGoods_name'), '/agentpool')]",
-      "dependsOn": [
-        "[resourceId('Microsoft.ContainerService/managedClusters', parameters('managedClusters_kubeContosoGoods_name'))]"
-      ],
-      "properties": {
-        "count": 3,
-        "vmSize": "Standard_DS2_v2",
-        "osDiskSizeGB": 100,
-        "maxPods": 110,
-        "type": "VirtualMachineScaleSets",
-        "orchestratorVersion": "1.15.10",
-        "nodeLabels": {},
-        "mode": "System",
-        "osType": "Linux"
-      }
     }
+   
   ]
 }
