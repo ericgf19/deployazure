@@ -163,7 +163,7 @@
           }
         ]
       }
-    }
+    },
     {
       "type": "Microsoft.Storage/storageAccounts",
       "apiVersion": "2019-06-01",
@@ -197,7 +197,7 @@
         },
         "accessTier": "Hot"
       }
-    },    
+    },
     {
       "type": "Microsoft.Storage/storageAccounts/blobServices",
       "apiVersion": "2019-06-01",
@@ -259,6 +259,6 @@
         "publicAccess": "Container"
       }
     }
-   
+
   ]
 }
